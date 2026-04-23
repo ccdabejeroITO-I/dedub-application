@@ -1651,10 +1651,10 @@ def _strict_restore_visible_headers(df: pd.DataFrame, meta_list: list[dict]):
         out = out.loc[:, kept_cols].copy()
 
     ordered_cols = []
-    for col in keep_system:
+    for col in original_headers:
         if col in out.columns and col not in ordered_cols:
             ordered_cols.append(col)
-    for col in original_headers:
+    for col in keep_system:
         if col in out.columns and col not in ordered_cols:
             ordered_cols.append(col)
     for col in out.columns:
